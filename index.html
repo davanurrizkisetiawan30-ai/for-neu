@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hi, Hapibesdey</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="locked">
+<div id="particles"></div>
+
+<div id="opening">
+  <p id="o-text" class="serif"></p>
+  <button id="open-btn" class="btn">OPEN YOUR SURPRISE →</button>
+</div>
+
+<nav>
+  <a href="#home" data-n="home">HOME</a><a href="#gallery" data-n="gallery">MEMORIES</a><a href="#music" data-n="music">MUSIC</a><a href="#game" data-n="game">GAME</a><a href="#letter" data-n="letter">LETTER</a><a href="#finale" data-n="finale">FINALE</a>
+</nav>
+
+<main>
+<section id="home" data-nav="home"><div class="center">
+  <p id="intro-line" class="serif big"></p>
+  <div id="hb" hidden>
+    <h1>HAPPY BIRTHDAY, NEU! 🎂</h1>
+    <p class="serif sub">Another year unlocked.</p>
+    <p class="muted">And somehow... you're still this pretty.</p>
+    <a class="btn" href="#message">KEEP SCROLLING ↓</a>
+  </div>
+</div></section>
+
+<section id="message" data-nav="home"><div class="narrow">
+  <p class="eyebrow">A FEW WORDS</p>
+  <h2>Dari aku, buat kamu.</h2>
+  <p class="msg reveal">Happy birthday, Neu! 🎂</p>
+  <p class="msg reveal">Another year unlocked. Another level completed. Dan jujur, kamu ngelewatinnya lumayan keren, walau kadang pakai mode <em>chaos</em>.</p>
+  <p class="msg reveal">Semoga tahun ini lebih banyak happy moments, lebih banyak hal baik, lebih banyak alasan buat senyum, dan obviously... lebih sedikit drama.</p>
+  <p class="msg reveal">Semoga apa yang lagi kamu usahain pelan-pelan ketemu jalannya. Nggak harus cepet, yang penting jalan terus.</p>
+  <p class="msg reveal jawa">Ojo lali seneng-seneng.<br>Urip iku kudu dinikmati, rek.</p>
+  <p class="msg reveal jawa">Ora usah kakehan mikir.<br>Sing penting waras. Anjayyy jawa pisan</p>
+</div></section>
+
+<section id="gallery" data-nav="gallery">
+  <p class="eyebrow center-t">THE ARCHIVE</p>
+  <h2 class="center-t">Pretty Girl Archive</h2>
+  <div class="gal" id="gal"></div>
+</section>
+
+<section id="music" data-nav="music">
+  <p class="eyebrow center-t">THE SOUNDTRACK</p>
+  <h2 class="center-t">Now Playing</h2>
+  <div class="player-card">
+    <div class="tabs"><button class="tab on" data-tab="player">PLAYER</button><button class="tab" data-tab="lyrics">LYRICS</button></div>
+    <div id="tab-player">
+      <div class="cover"><img src="assets/photos/gemilang-cover.webp" alt="Gemilang cover" onerror="this.remove()"><span>♫</span></div>
+      <div class="meta"><h3 id="song-title">Gemilang</h3><p>Perunggu</p><p id="status" class="status">Press play</p></div>
+      <canvas id="viz" width="600" height="80"></canvas>
+      <div class="bar"><span id="cur">0:00</span><input type="range" id="seek" min="0" max="100" value="0" step="0.1" aria-label="Progress"><span id="dur">0:00</span></div>
+      <div class="ctrls"><button id="mute" class="ic" aria-label="Mute">🔊</button><button id="play" class="ic big" aria-label="Play">▶</button><input type="range" id="vol" min="0" max="1" step="0.01" value="0.8" aria-label="Volume"></div>
+    </div>
+    <div id="tab-lyrics" hidden><div id="lyrics-box"></div></div>
+  </div>
+</section>
+
+<section id="game" data-nav="game">
+  <p class="eyebrow center-t">GAME 01</p>
+  <h2 class="center-t">Neu's Birthday Quest</h2>
+  <p class="center-t muted">Find 5 hidden stars. Klik/tap sekeliling room. They're shy.</p>
+  <div class="hud"><span>STARS FOUND</span><b id="stars">☆☆☆☆☆</b><button id="hint" class="btn sm">HINT</button></div>
+  <div id="room"><div class="win"></div><div class="rug"></div><div id="toast"></div></div>
+  <div id="secret" class="secret" hidden>
+    <h3>Achievement Unlocked! 🎉</h3>
+    <p>Secret message: kamu nemuin semua bintangnya, which is basically the whole point. Bintang yang beneran itu kamu sendiri, Neu.</p>
+    <button id="replay" class="btn sm">PLAY AGAIN</button>
+  </div>
+</section>
+
+<!-- <section id="quiz" data-nav="game"> -->
+  <!-- <p class="eyebrow center-t">GAME 02</p> -->
+  <!-- <h2 class="center-t">How Well Do You Know Neu?</h2> -->
+  <!-- <div id="quiz-box" class="quiz"></div> -->
+<!-- </section> -->
+
+<section id="letter" data-nav="letter">
+  <p class="eyebrow center-t">ONE LAST THING</p>
+  <h2 class="center-t">One Last Thing...</h2>
+  <div class="env-wrap">
+    <button id="env" class="env" aria-label="Open letter"><span class="flap"></span><span class="body"></span><span class="seal">❤</span></button>
+    <p class="muted center-t" id="env-hint">tap the envelope</p>
+    <article id="paper" class="paper">
+      <p>Dear Neu,</p>
+      <p>I hope this year gives you more reasons to smile, more moments worth remembering, more people worth keeping, and more things to look forward to.</p>
+      <p>Take more pictures. Laugh a little louder. Worry a little less.</p>
+      <p>Kadang hidup emang nggak sesimpel yang kita mau, dan itu oke. kamu nggak harus kuat setiap hari. Tapi kamu juga nggak harus ngelewatin semuanya sendirian.</p>
+      <p>Happy birthday, Neu.<br>You've got another year.<br><strong>Make it count.</strong></p>
+      <a href="#finale" class="btn sm">CONTINUE →</a>
+    </article>
+  </div>
+</section>
+
+<section id="finale" data-nav="finale">
+  <canvas id="fx"></canvas>
+  <div class="fin">
+    <button id="fin-start" class="btn">▶ ONE MORE THING</button>
+    <p id="fin-line" class="serif big"></p>
+    <h1 id="fin-big">HAPPY BIRTHDAY, NEU! 🎉</h1>
+    <div id="fin-end">
+      <p class="serif sub">May your next chapter be even better than the last.</p>
+      <p class="gold">Stay pretty. Stay chaotic. Stay iconic.</p>
+      <p class="serif sub">HAPPY BIRTHDAY, NEU</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<button id="mini-btn" class="fab"><span class="eq"><i></i><i></i><i></i></span><span><b>♫ Gemilang</b><small id="mini-state">▶ Paused</small></span></button>
+<div id="mini" class="panel" hidden><b>Gemilang · Perunggu</b><div><button id="mini-play" class="ic">▶</button><a href="#music" class="btn sm">OPEN PLAYER</a></div></div>
+
+<button id="sb-btn" class="fab sbf" aria-label="Soundboard">🎛️</button>
+<div id="sb" class="panel sbp" hidden>
+  <div class="sbgrid" id="sbgrid"></div>
+  <div class="sbvol"><button id="sb-mute" class="ic">🔊</button><input type="range" id="sb-vol" min="0" max="1" step="0.01" value="0.8" aria-label="Soundboard volume"></div>
+</div>
+
+<div id="modal" class="modal" hidden><div class="mbox"><button class="x" aria-label="Close">×</button><div class="mimg" id="m-img"></div><h3 id="m-title"></h3><p class="date" id="m-date"></p><p id="m-text"></p></div></div>
+
+<script src="js/main.js"></script>
+<script src="js/music.js"></script>
+<script src="js/lyrics.js"></script>
+<script src="js/game.js"></script>
+<script src="js/fireworks.js"></script>
+</body>
+</html>
